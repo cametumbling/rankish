@@ -1,0 +1,15 @@
+service: rankish
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-west-1
+
+functions:
+  rankish:
+    handler: handler.rankish
+    events:
+      - http:
+          path: rankish
+          method: get
